@@ -1,0 +1,124 @@
+.sidenav {
+    top: 0;
+    left: 0; 
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-radius: .32rem;
+    /* height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px; */
+  }
+  input {
+    padding-bottom: 20px;
+  }
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+   .dropdown-btn:hover {
+    color: #110e0e;
+  }
+  .sidenav a:hover {
+      color: dark;
+      text-decoration: none;
+  }
+
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  .active {
+    /* color: white; */
+    font-size: larger;
+  }
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {
+        float: left;}
+    div.content {
+        margin-left: 0;
+    }
+  }
+  
+
+  @media screen and (max-height: 400px){
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    #col2 {
+      background-image: none;
+    }
+    .section .content {
+        height: 80vh;
+    }
+  }
+  h1 {
+      color: white;
+  }
+
+  /* top bar */
+  .topbar {
+      background-color: rgb(26, 8, 5);
+      color: white;
+  }
+  .section .content {
+      background-image: url(home.jpg);
+      height: 80vh;
+      background-size: cover;
+      color: white;
+  }
+  #picture1{
+    width:80%;
+    float: left;
+  
+  }
+  
+  #picture2{
+    width:50%;
+    float: right;
+  
+  }
+  .section #col1 {
+      background-color: white;
+  }
+  .footer {
+	height: 40px;
+	background-color: rgb(0, 162, 255);
+	padding: 10px;
+	text-align: center;
+	margin-top: 10px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+  width: 100%;
+}
