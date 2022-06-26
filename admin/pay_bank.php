@@ -22,14 +22,14 @@
             if(mysqli_num_rows($result)> 0){
                 while ($row = mysqli_fetch_array($result)) {
                     $name = $row['farmerName'];
-                    $accno = $row['accountNo'];
+                    $accno = $row['phoneNo'];
                 }
             }
         }
     ?>
   </head>
   <body>
-    <div class="container bg-light" style="height: 90vh">
+    <div class="container-fluid bg-light" style="height: 90vh">
           <div class="header">
             <?php include 'topbar.php'?>
           </div>
@@ -40,11 +40,10 @@
             <div class=" col-sm-9 bg-light " method="post" id="col2">
                 <div class="card">
                     <form  method="post" class="d-flex my-2 m-sm-4">
-                        <label>search farmer</label> 
                         <input class="form-control mr-sm-2 ml-sm-2 w-75" type="search" name="find" placeholder="Search farmer by zan id, nida or zstc registration no." aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>                       
                     </form> <br>
-                <form action="bank.php" method="post" class="m-sm-4">
+                <form action="bank.php" method="post" class="m-sm-4" enctype="multipart/form-data">
                     <h3>Bank Payment</h3><hr>
                     <div class="form-group">
                         <div class="row">
@@ -77,7 +76,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <label>Account Number</label>
-                                <input type="number" name="accno" id="accno" class="form-control" value="<?php echo $accno ?>">
+                                <input type="number" name="accno" id="accno" class="form-control" value="<?php echo $accno ?>" required>
                             </div>
                         </div>
                         <div class="row">

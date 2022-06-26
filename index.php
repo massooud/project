@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body class="bg-light">
-    <div class="container text-center bg">
-    <center>
-        <form action="auth_v.php" method="post" enctype="multipart/form-data">
-      	<div class="card text-center mt-4 bg-white form" style="height: 80vh; width: 25rem">
+    <div class="container justify-content-center d-flex">
+        <form action="auth_v.php" class="form" method="post" enctype="multipart/form-data">
+      	<div class="card text-center mt-4 bg-white" style="height: 70vh; width: 23rem">
       		<div class="card-img-top">
-      			<img src="zstc.jpg " class="" style="">
+      			<img src="./admin/zstc.jpg " class="" style="">
       		</div>
       		<div class="card-title text-center mt-1">
       			<div class="h5 bg-light">
@@ -50,7 +49,6 @@
       		</div>       
           </div>
         </form>
-          </center>
       </div>
   </body>
 </html>

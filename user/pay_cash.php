@@ -11,6 +11,7 @@
     <?php 
         include 'connection.php';
         include 'link.php';
+        session_start();
         //fiil out the farmers information
         $name = "";
         $phone = "";
@@ -18,7 +19,7 @@
         if (isset($_POST['search'])) {
             
             $find =  $_POST['find'];
-            $sql = "SELECT farmerName, phoneNo, fullName  FROM farmer, reg_user where phoneNo = '$find' or zanId ='$find' or Nida like '$find' or zstcRegNo like '$find'"; 
+            $sql = "SELECT * FROM farmer where phoneNo = '$find' or zanId ='$find' or Nida like '$find' or zstcRegNo like '$find'"; 
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result)> 0){
                 while ($row = mysqli_fetch_array($result)) {
@@ -45,7 +46,7 @@
                     <input class="form-control mr-sm-2 ml-sm-2 w-75" type="search" name="find" placeholder="Search farmer by zan id, nida or zstc registration no." aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>                       
                 </form> <br>
-                <form action="cash.php" method="post" class="m-sm-4">                   
+                <form action="action.php" method="post" class="m-sm-4">                   
                     <h3>Cash payment</h3> <hr>
                     <div class="form-group">
                         <div class="row">
@@ -114,13 +115,11 @@
                         </div>
                         <br>
                     </div>
-                    <div class="text-center">
-                            <button class="btn btn-primary m-4" name="addcash">submit<i class="fa fa-plus"></i></button> 
-                            <button class="btn btn-warning m-4" ><a href="s_cash.php">view</a> </button>
-                            <button class="btn btn-danger m-4" type="reset" >clear </button>                    
-                    </div>
-                    <input type="hidden" name="userid" value=" <?php echo $uid ?>">
+                    <input type="hidden" name="userid" value=" <?php echo $_SESSION['userid'] ?>">
                     <input type="hidden" name="productid" value="<?php echo $pid ?>">
+                    <div class="text-center">
+                        <button class="btn btn-primary m-4" name="addcash">submit<i class="fa fa-plus"></i></button>       
+                    </div>
             </form>
         </div>
             </div>

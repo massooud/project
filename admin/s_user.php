@@ -25,7 +25,7 @@
                 <?php include "sidenav.php" ?>
             </div>
             <div class="col-sm-9 bg-light" id="col2">
-                <table class="table table-striped d-block">
+                <table class="table table-responsive d-block">
                     <thead>
                         <tr>
                             <th>User Id</th>

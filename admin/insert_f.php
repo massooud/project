@@ -12,7 +12,7 @@
         $f_zanid = $_POST['zid'];
         $f_nida = $_POST['nida'];
 
-        $sql = "INSERT INTO farmer(farmerName, gender, ward, location, date, phoneNo, zstcRegNo, zanId,Nida) VALUES('$f_name','$f_gender','$f_ward','$f_location','$f_date',$f_phone,'$f_regno','$f_zanid','$f_nida');";
+        $sql = "INSERT INTO farmer(farmerName, gender, ward, location, date, phoneNo, zstcRegNo, zanId,Nida) VALUES('$f_name','$f_gender','$f_ward','$f_location','$f_date','$f_phone','$f_regno','$f_zanid','$f_nida');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $_SESSION['status'] = "Farmer registered!";

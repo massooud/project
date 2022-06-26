@@ -71,7 +71,7 @@
   }
   
 
-  @media screen and (max-height: 400px){
+  @media screen and (max-width: 500px){
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
     #col2 {
@@ -109,7 +109,8 @@
   
   }
   .section #col1 {
-      background-color: white;
+      /* background-color: white; */
+      background-color: lightpink;
   }
   .footer {
     height: 40px;

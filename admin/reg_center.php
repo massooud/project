@@ -27,8 +27,6 @@
                   </div>
                   <div class="row m-4">
                       <div class="col-sm-6">
-                          <label>Center Number</label>
-                          <input type="text" name="cno" class="form-control" placeholder="enter center Region">
                           <label>Center Name</label>
                           <input type="text" name="cname" class="form-control" placeholder="enter center name">
                           <label>Center Region</label>

@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-9 bg-light" id="col2">
             <div class="card">
-            <form class="form form-group"  action="insert_u.php" method="post">
+            <form class="form form-group" enctype="multipart/form-data" action="insert_u.php" method="post">
                 	<div class="row text-center">
                 		 <h3 class="col-sm-12">REGISTRATION FORM</h3> <hr class="col-sm-10 ml-4" style=""> 
                 	</div>

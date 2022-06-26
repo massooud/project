@@ -1,6 +1,5 @@
-
 <div class="sidenav">
-  <a href="design.php"> <i class="fa fa-home"></i> Home</a>
+  <a href="dashboard.php"> <i class="fa fa-home"></i> Home</a>
   <button class="dropdown-btn ">Business <i class="fa fa-caret-down"></i></button>
   <div class="dropdown-container bg-light ml-sm-4">
       <a href="reg_user.php">User</a>
@@ -31,9 +30,9 @@
       this.classList.toggle("active");
       var dropdownContent = this.nextElementSibling;
       if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
+          dropdownContent.style.display = "none";
       } else {
-      dropdownContent.style.display = "block";
+          dropdownContent.style.display = "block";
       }
       });
     }

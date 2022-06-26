@@ -1,17 +1,18 @@
 <?php
     include_once('connection.php');
     if (isset($_POST['submit'])) {
+        
         $u_id = $_POST['userid'];
         $u_name = $_POST['name'];
         $u_email = $_POST['email'];
-        $u_username = md5($_POST['username']);
-        $u_password = md5($_POST['password']);
+        $u_username = $_POST['username'];
+        $u_password = $_POST['password'];
         $u_location = $_POST['location'];
         $u_level = $_POST['level'];
         $u_gender = $_POST['gender'];
-        $hash = password_hash($u_password,PASSWORD_DEFAULT);
-        $sql = "INSERT INTO reg_user(userid,fullName,gender,location,email,username,password,accessLevel) VALUES
-        ('$u_id','$u_name','$u_gender', '$u_location','$u_email','$u_username', '$hash', '$u_level');";
+        //$hash = password_hash($u_password,PASSWORD_DEFAULT);
+        $sql = "INSERT INTO reg_user(fullName,gender,location,email,username,password,accessLevel) VALUES
+        ('$u_name','$u_gender', '$u_location','$u_email','$u_username', '$u_password', '$u_level');";
          if (mysqli_query($conn, $sql)) {
             header("location: reg_user.php");
         }else {

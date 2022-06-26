@@ -1,41 +1,72 @@
-<?php
+<!-- <?php 
     session_start();
-    include 'connection.php';
+    include_once 'config.php';
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
     
-
-    if(isset($_POST['login'])){
-        extract($_POST);
-
-        $username = $_POST['username'];
-        $password =  $_POST['password'];
-        $role = 'user';
-        $sq = "SELECT * FROM reg_user where username='$username' and password='$password'";
-        $sql=mysqli_query($conn,$sq);
-        $row  = mysqli_fetch_array($sql);
-
-        if ($row['accessLevel'] == "admin") {
-            header('location: design.php');
-        }else {
-            echo "error: " . $sq . mysqli_error($conn);
-        }
-        /*if(is_array($row)){
-
-            $_SESSION["userid"] = $row['userid'];
-            $_SESSION["password"]=$row['password'];
-            $_SESSION["fullName"]=$row['fullName'];
+    if (!empty($username) && !empty($password)) {
+        $sq = "SELECT * from reg_user WHERE username='$username' AND password='$password'";
+        $sql = mysqli_query($conn,$sq);
+        if (mysqli_num_rows($sql)>0) {
+            $row = mysqli_fetch_assoc($sql);
+            $_SESSION['userid'] = $row['userid'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['password'] = $row['password'];
             $_SESSION['role'] = $row['accessLevel'];
-            if ($sql1 = 'admin') {
-                 header("location: design.php");
-             } else {
-                header('location: s_user.php');
-             }
-             
-        }
-        else
-        {
-            echo "Invalid Email ID/Password";
-            echo "error" . $sql . mysqli_error($conn);
+            //header('location: design.php');
+            if ($_SESSION['role']=="admin") {
+                header('location: admin/dashboard.php');
+            }elseif($_SESSION['role']=="user"){
+                header('location: user/dashboard.php');
+            }
+
+        } else {
+            echo "Error: " + $sq + mysqli_error($conn);
             header('location: index.php');
-        }*/
+        } 
     }
-?>
+
+ ?> -->
+
+<?php 
+    session_start();
+    include_once 'config.php';
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $pass = $_POST['password'];
+    
+    //$sq = "SELECT * from reg_user WHERE username='$username' AND password='$password'";
+    $sq = "SELECT password from reg_user WHERE username = '$username' and password='$password'";
+    password_verify($password, $sq);
+    $sql = mysqli_query($conn,$sq);
+    $ro = mysqli_fetch_assoc($sql);
+
+
+    if (!empty($username) && !empty($password)) {
+        //$sq = "SELECT * from reg_user WHERE username='$username' AND password='$password'";
+        //$sql = mysqli_query($conn,$sq);
+        //$ro = mysqli_fetch_assoc($sql);
+        
+        if (mysqli_num_rows($sql)>0) {
+            $row = mysqli_fetch_assoc($sql);
+            $_SESSION['userid'] = $row['userid'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['password'] = $row['password'];
+            $_SESSION['role'] = $row['accessLevel'];
+            //header('location: design.php');
+            if ($_SESSION['role']=="admin") {
+                header('location: admin/dashboard.php');
+            }elseif($_SESSION['role']=="user"){
+                header('location: user/dashboard.php');
+            }
+
+        } else {
+            echo "Error: " + $sq + mysqli_error($conn);
+            header('location: index.php');
+        } 
+    }
+
+ ?>
+
+
+

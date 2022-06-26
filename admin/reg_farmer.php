@@ -8,7 +8,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <?php include 'link.php' ?>
+    <?php 
+      include 'link.php'
+      /*$id = $_GET[$_SESSION['username']];
+      $sql = "SELECT * FROM reg_user WHERE userid = '$id'";*/
+       ?>
   </head>
   <body>
     <div class="container-fluid text-center bg-light" style="height: 90vh">
@@ -19,9 +23,12 @@
             <div class="col-sm-2 " id="col1">
                 <?php include "sidenav.php" ?>
             </div>
-            <div class="col-sm-9 bg-secondary " id="col2">
-                <h1>Register Farmer</h1><hr>
+            <div class="col-sm-9 " id="col2">
+                <div class="card">
                 <form class="form form-group"  action="insert_f.php" method="post">
+                  <div class="row text-center">
+                     <h3 class="col-sm-12">Register Farmer</h3> <hr class="col-sm-10 ml-4" style=""> 
+                  </div>
                     <div class="row m-4">
                         <div class="col-sm-4">
                             <label>Farmer name</label>
@@ -65,7 +72,7 @@
                          <button class="btn btn-danger m-4" >delete  <i class="fa fa-trash-o"></i></button>                    
                      </div>	
                 </form>
-      
+              </div>
             </div>
           </div>
           <div class="footer">

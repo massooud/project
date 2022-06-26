@@ -43,10 +43,8 @@
 				<input type="hidden" name="id" value="<?php echo $id ?>">
 			</div>
 		</div>
-		<div class="m-sm-4">
-			<center>
-				<button type="submit" name="update" class="btn btn-primary">update</button>
-			</center>		
+		<div class="m-sm-4 text-center">
+			<button type="submit" name="update" class="btn btn-primary">update</button>					
 		</div>
 	</form>
 </body>
