@@ -22,8 +22,9 @@
 		}else {
 			$_SESSION['status'] = "Failed";
 			echo "error" . $sql . mysqli_error($conn);
-			/*header('location: pay_cash.php');*/
-	}elseif($_POST['addcash']){
+        /*header('location: pay_cash.php');*/
+         }
+	} elseif($_POST['addcash']){
             $name = $_POST['name'];
             $good = $_POST['good'];
             $mobname = $_POST['mobname'];

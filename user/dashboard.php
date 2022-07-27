@@ -21,7 +21,7 @@
           </div>
           <div class="section row ml-1 mr-1" style="height: 70vh">
             <div class="col-sm-2" id="col1">
-            <!-- <span style="font-size:30px;cursor:pointer" class="float-left" onclick="openSideNav()">&#9776; open</span> -->
+            <span style="font-size:30px;cursor:pointer" class="float-left" onclick="openSideNav()">&#9776; open</span>
                 <?php include "sidenav.php" ?>
             </div>
             <div class="content col-sm-9 bg-secondary " id="col2">
